@@ -1,6 +1,5 @@
 import { router } from "expo-router";
-import { Text } from "react-native";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { Text, TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 const Onboarding = () => {
