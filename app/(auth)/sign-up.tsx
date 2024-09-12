@@ -1,7 +1,10 @@
-import { images } from "@/constants";
+import InputField from "@/components/InputField";
+import { icons, images } from "@/constants";
+import { useState } from "react";
 import { Image, ScrollView, Text, View } from "react-native";
 
 const SignUp = () => {
+  const [form, setForm] = useState({ name: "", email: "", password: "" });
   return (
     <ScrollView className=" flex-1 bg-white">
       <View className=" flex-1 bg-white">
@@ -11,9 +14,30 @@ const SignUp = () => {
             Create Your Account
           </Text>
         </View>
-          <View className="p-5">
-            <InputField/>
-          </View>
+        <View className="p-5">
+          <InputField
+            label="Name"
+            placeholder="Enter Your Name"
+            icon={icons.person}
+            value={form.name}
+            onChangeText={(value) => setForm({ ...form, name: value })}
+          />
+          <InputField
+            label="Email"
+            placeholder="Enter Your Email"
+            icon={icons.email}
+            value={form.email}
+            onChangeText={(value) => setForm({ ...form, email: value })}
+          />
+          <InputField
+            label="Password"
+            placeholder="Enter Your Password"
+            icon={icons.lock}
+            secureTextEntry = {true}
+            value={form.Password}
+            onChangeText={(value) => setForm({ ...form, Password: value })}
+          />
+        </View>
       </View>
     </ScrollView>
   );
